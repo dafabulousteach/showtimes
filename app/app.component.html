@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  <div class="row">
+    <input [(ngModel)]="searchText" placeholder="Search movies..." />
+  </div>
+  <div class="col-md-4" *ngFor="let item of results">
+    {{ item }}
+  </div>
+  <app-movie-cover></app-movie-cover>
+
+</div>
