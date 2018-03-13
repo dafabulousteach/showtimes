@@ -16,9 +16,7 @@ import 'rxjs/add/observable/of';
 export class AppComponent implements OnInit{
   // loadedCharater = {}
   title = 'Movie Showtimes';
-  results : {
-
-  }
+  results = [];
 
   constructor(private _moviesDataService: MoviesDataService){}
 
@@ -33,23 +31,11 @@ export class AppComponent implements OnInit{
         Observable.of(showtimes)
       )
     })
-    // .filter(([movies, showtimes]) => movies.id == Object.keys(showtimes)[0])
     .subscribe(([movies, showtimes]) => {
-      const movieId = Object.keys(movies); // -> ["######", "########", "#######"]
       const showtimeId = Object.keys(showtimes);
-      console.log('movies: ', movies);
-      // console.log('showtimeId is: ',showtimeId);
-      // movieId.filter(el => movieId)
-      for(let i in movies){
-        console.log(movies[i].hasownProperty(showtimeId[0]));
-        // console.log('movies[i]: ', movies[i]);
-        // console.log('movieId is: ', movieId);
 
-      }
-      for(let i = 0; i< movieId.length; i++){
-        // console.log('movieId[i]: ', movieId[i]);
-        // showtimes[movieId[i]] -> keep this
-        // console.log('showtimes[movieId[i]]: ', showtimes[movieId[i]]);
+      for(let i = 0; i < showtimeId.length; i++ ){
+        this.results.push(movies[showtimeId[i]].title);
       }
 
     })
