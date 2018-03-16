@@ -7,9 +7,14 @@
   <div class="row">
     <input [(ngModel)]="searchText" placeholder="Search movies..." />
   </div>
-  <div class="col-md-4" *ngFor="let item of results">
-    {{ item }}
+  <div class="col-md-8">
+    <!-- <div *ngFor="let res of results">
+      {{ res.movieTitle }}
+      {{ res.rating }}
+      <img src="{{ res.poster }}"/>
+    </div> -->
   </div>
+
   <app-movie-cover></app-movie-cover>
 
 </div>

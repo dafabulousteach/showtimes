@@ -16,10 +16,14 @@ import 'rxjs/add/observable/of';
 export class AppComponent implements OnInit{
   // loadedCharater = {}
   title = 'Movie Showtimes';
-  results = [];
+  results = {
+    movieTitle: [],
+    rating: [],
+    poster: []
+  };
 
   constructor(private _moviesDataService: MoviesDataService){}
-
+   
   ngOnInit() {
     this._moviesDataService.getShowtimes()
     .switchMap(res => {
@@ -33,11 +37,13 @@ export class AppComponent implements OnInit{
     })
     .subscribe(([movies, showtimes]) => {
       const showtimeId = Object.keys(showtimes);
+      // this.results = [movies]
 
       for(let i = 0; i < showtimeId.length; i++ ){
-        this.results.push(movies[showtimeId[i]].title);
+        this.results.movieTitle.push(movies[showtimeId[i]].title);
+        this.results.rating.push(movies[showtimeId[i]].rating);
+        this.results.poster.push(movies[showtimeId[i]].poster);
       }
-
     })
 
   }
