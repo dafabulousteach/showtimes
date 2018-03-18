@@ -1,20 +1,31 @@
 <div class="container">
-  <div class="row">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-  </div>
-  <div class="row">
-    <input [(ngModel)]="searchText" placeholder="Search movies..." />
-  </div>
-  <div class="col-md-8">
-    <!-- <div *ngFor="let res of results">
-      {{ res.movieTitle }}
-      {{ res.rating }}
-      <img src="{{ res.poster }}"/>
-    </div> -->
-  </div>
+  <div class="col-md-8 centered">
 
-  <app-movie-cover></app-movie-cover>
+    <div class="row justify-content-center searchBox">
+      <div class="col">
+        <input [(ngModel)]="searchText" class="form-control" aria-label="Large" placeholder="Search movies..." />
+      </div>
+    </div>
 
+    <div class="row justify-content-center theater">
+      <div class="col-xs-3 col-sm-4 text-center" *ngFor="let theater of theaters">
+        {{ theater }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let res of results">
+        <div class="row justify-content-center">
+          <div class="col-sm-4 text-center">
+            <img src="{{ res.poster }}" alt="">
+          </div>
+          <div class="col-sm-8 text-center title">
+            <h2>{{ res.title }}</h2><h3> ({{ res.rating }})</h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

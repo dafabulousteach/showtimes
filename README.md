@@ -1,27 +1,26 @@
-# MovieShowtimes
+# Movie Showtimes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Getting Started
+1. Install the ang-cli `npm install -g @angular/cli`
+2. `npm install` to install dependencies
+3. `ng serve` to run the application
+4. `ng test` to run the unit tests
 
 ## Running unit tests
+I wrote a few basic unit tests to guide my development and ensure that the component and shared service is up and running. I also changed the karma reporter to Nyan cat because I need to see something fun in my terminal.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## What I Was Able to Get Done in Two Hours
+1. Working mobile view of application ![mobile-view](https://imgur.com/a/MsfIw.jpg)
+2. Working desktop view of application ![desktop-view](https://imgur.com/a/PN111.jpg)
+3. Unit tests for App Component and Movie Data Service
+4. Response model using strong typing
+5. Default styling set for mobile
+6. Media breakpoints for tablet and desktop views
+7. Local server
+8. Live reload using `ng serve`
+9. Automated unit tests using `ng test`
 
-## Running end-to-end tests
+## Data Structure
+I decided to change the `movie_metadata.json` data structure by making the `id` of the movie its key. The reason for this was that it made mapping easier and reduced the number of objects I needed to loop through down to one.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Having the data structures match makes mapping and iteration easier

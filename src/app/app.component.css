@@ -1,8 +1,58 @@
+/************* DEFAULT STYLING: MOBILE ***************/
 img {
-  width: 200px;
-  height: 200px;
+  width: 30%;
+  height: auto;
 }
 
 ul {
   list-style: none;
 }
+
+input {
+  width: 100%;
+}
+.theater {
+  margin-left: 0%;
+  margin-right: -30%
+}
+.row.theater {
+  margin-bottom: 5%;
+}
+
+.col-md-8 {
+  float: none;
+  margin: auto;
+}
+
+.row.searchBox {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.col-sm-8.title h2 {
+  display: inline;
+}
+
+.col-sm-8.title h3 {
+  display: inline;
+}
+/****************************************************/
+
+/****************** TABLET STYLING *****************/
+@media only screen and (min-device-width: 768px) {
+  img {
+    width: 70%;
+  }
+}
+/****************************************************/
+
+/****************** DESKTOP STYLING *****************/
+@media only screen and (min-device-width: 1025px) {
+  img {
+    width: 50%;
+  }
+  .theater {
+    margin-right: -10%;
+  }
+}
+/****************************************************/
