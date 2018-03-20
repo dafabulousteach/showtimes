@@ -10,8 +10,8 @@
 I wrote a few basic unit tests to guide my development and ensure that the component and shared service is up and running. I also changed the karma reporter to Nyan cat because I need to see something fun in my terminal.
 
 ## What I Was Able to Get Done in Two Hours
-1. Working mobile view of application ![mobile-view](https://imgur.com/a/MsfIw.jpg)
-2. Working desktop view of application ![desktop-view](https://imgur.com/a/PN111.jpg)
+1. Working mobile view of application ![mobile-view](https://imgur.com/PmcNc8e.jpg)
+2. Working desktop view of application ![desktop-view](https://imgur.com/AtuIeuO.jpg)
 3. Unit tests for App Component and Movie Data Service
 4. Response model using strong typing
 5. Default styling set for mobile
