@@ -14,7 +14,7 @@
     </div>
 
     <div class="row">
-      <div *ngFor="let res of results">
+      <div *ngFor="let res of results | filter : searchText">
         <div class="row justify-content-center">
           <div class="col-sm-4 text-center">
             <img src="{{ res.poster }}" alt="">

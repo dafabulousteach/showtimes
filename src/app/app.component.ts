@@ -13,12 +13,12 @@ import 'rxjs/add/observable/of';
   styleUrls: ['./app.component.css'],
   providers: [MoviesDataService]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Movie Showtimes';
   theaters = ['ARCLIGHT', 'PACIFIC THEATERS', 'AMC'];
   results = [];
 
-  constructor(private _moviesDataService: MoviesDataService){}
+  constructor(private _moviesDataService: MoviesDataService) {}
 
   ngOnInit() {
 
@@ -27,15 +27,15 @@ export class AppComponent implements OnInit{
 
       const showtimes = res[0].showtimes;
       const id = Object.keys(showtimes);
-      this._moviesDataService.getMovieData(id)
+      this._moviesDataService.getMovieData(id);
       return Observable.zip(
         this._moviesDataService.getMovieData(id),
         Observable.of(showtimes)
-      )
+      );
     })
     .subscribe(([movies, showtimes]) => {
       const showtimeId = Object.keys(showtimes);
-      for(let i = 0; i < showtimeId.length; i++ ){
+      for (let i = 0; i < showtimeId.length; i++ ) {
         this.results.push(
           {
             poster: movies[showtimeId[i]].poster,
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit{
             rating: movies[showtimeId[i]].rating
           });
       }
-    })
+    });
 
   }
 
